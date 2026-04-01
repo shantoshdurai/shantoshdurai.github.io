@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHITECT_OS | THE LAB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#00426d",
+              "on-surface": "#2d2f2f",
+              "surface-variant": "#dbdddd",
+              "on-primary-fixed": "#433700",
+              "tertiary-dim": "#005387",
+              "error-dim": "#b92902",
+              "outline": "#757777",
+              "on-primary-fixed-variant": "#645300",
+              "on-tertiary-fixed": "#00223c",
+              "on-surface-variant": "#5a5c5c",
+              "surface-bright": "#f6f6f6",
+              "inverse-primary": "#fdd400",
+              "secondary-dim": "#68349f",
+              "surface-tint": "#6d5a00",
+              "inverse-on-surface": "#9c9d9d",
+              "primary-fixed-dim": "#edc600",
+              "surface-container": "#e7e8e8",
+              "error-container": "#f95630",
+              "tertiary": "#035f99",
+              "surface-dim": "#d2d5d5",
+              "secondary-fixed": "#e3c6ff",
+              "background": "#f6f6f6",
+              "on-background": "#2d2f2f",
+              "surface": "#f6f6f6",
+              "outline-variant": "#acadad",
+              "on-secondary": "#faefff",
+              "inverse-surface": "#0c0f0f",
+              "surface-container-highest": "#dbdddd",
+              "tertiary-container": "#7ebefe",
+              "on-error": "#ffefec",
+              "surface-container-lowest": "#ffffff",
+              "primary-dim": "#5f4e00",
+              "primary-container": "#fdd400",
+              "primary": "#6d5a00",
+              "on-secondary-fixed-variant": "#6935a0",
+              "on-primary-container": "#594a00",
+              "secondary": "#7541ac",
+              "on-error-container": "#520c00",
+              "on-secondary-container": "#5f2b96",
+              "on-tertiary": "#ecf3ff",
+              "on-tertiary-container": "#00395f",
+              "surface-container-low": "#f0f1f1",
+              "error": "#b02500",
+              "on-secondary-fixed": "#4b1081",
+              "tertiary-fixed-dim": "#70b0ef",
+              "surface-container-high": "#e1e3e3",
+              "secondary-container": "#e3c6ff",
+              "primary-fixed": "#fdd400",
+              "secondary-fixed-dim": "#dab5ff",
+              "tertiary-fixed": "#7ebefe",
+              "on-primary": "#fff2ce"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .bg-dot-grid {
+            background-image: radial-gradient(circle, #5a5c5c 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-color: #f6f6f6;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(12,15,15,1);
+        }
+        .hard-shadow-lg {
+            box-shadow: 8px 8px 0px 0px rgba(12,15,15,1);
+        }
+        .active-press:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px rgba(12,15,15,1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-[#f6f6f6]/80 backdrop-blur-md border-b-2 border-[#0c0f0f] bg-dot-grid">
+<div class="text-xl font-black tracking-tighter text-[#0c0f0f] uppercase font-headline">
+            ARCHITECT_OS
+        </div>
+<div class="hidden md:flex items-center gap-8 h-full">
+<a class="font-headline uppercase tracking-tighter font-bold text-[#0c0f0f] hover:text-[#7541ac] transition-all duration-100" href="#">WORK</a>
+<a class="font-headline uppercase tracking-tighter font-bold text-[#0c0f0f] hover:text-[#7541ac] transition-all duration-100" href="#">ARCHIVE</a>
+<a class="font-headline uppercase tracking-tighter font-bold text-[#6d5a00] border-b-4 border-[#6d5a00] h-full flex items-center" href="#">LABS</a>
+<a class="font-headline uppercase tracking-tighter font-bold text-[#0c0f0f] hover:text-[#7541ac] transition-all duration-100" href="#">CONTACT</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 border-2 border-black hard-shadow bg-surface hover:bg-primary-container active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100">
+                terminal
+            </button>
+</div>
+</nav>
+<!-- Side Navigation Bar (Hidden on mobile) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full z-40 w-64 border-r-4 border-[#0c0f0f] bg-[#f0f1f1] pt-24">
+<div class="px-6 mb-12">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 border-2 border-black hard-shadow bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Santosh" class="w-full h-full object-cover" data-alt="Stylized portrait avatar of the developer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpYPUdD7N0JS2DhoWE88eSh4szo0mbHnqiX7VRQO19_EiM3-U-6HIdJk5sUH9j6k3XrAe-fEzW1jCfTrFVcLTmLUKQuNxrgVAWvDC_Al90BMxWwjGRWr4rLVoUF_eYHDiS8X-iiRXdp7jUURQrFKi_gP3KOJG_Nq0JtCB3raZnCJr0j4s8Y7kFgaK4-ggH-6ivaQDoBGs5dn651cYSX4HQ_hbACSAe-CQ9HCEhP9GSSlYCgdYG7QOwD94PKoah_82Ni5R8ks9noPs"/>
+</div>
+<div>
+<h2 class="font-headline font-black text-sm text-[#0c0f0f]">SANTOSH DURAI</h2>
+<div class="inline-block border border-black px-1 mt-1">
+<span class="font-label text-[10px] font-bold">STATUS: ONLINE</span>
+</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-4">
+<a class="flex items-center gap-3 px-4 py-3 font-headline font-bold uppercase text-[#0c0f0f] hover:bg-[#7ebefe] hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span>PROJECTS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-headline font-bold uppercase text-[#0c0f0f] hover:bg-[#7ebefe] hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">code</span>
+<span>GITHUB</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-headline font-bold uppercase text-[#0c0f0f] hover:bg-[#7ebefe] hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">polyline</span>
+<span>DRIBBBLE</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-headline font-bold uppercase text-[#0c0f0f] hover:bg-[#7ebefe] hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>RESUME</span>
+</a>
+</nav>
+<div class="p-4">
+<button class="w-full bg-primary-container text-on-primary-container font-headline font-bold uppercase py-4 border-2 border-black hard-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:scale-95 transition-all">
+                HIRE ME
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="lg:pl-64 pt-24 min-h-screen bg-dot-grid pb-20">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Section Header -->
+<header class="mb-12">
+<div class="inline-block bg-secondary-container border-4 border-black px-8 py-4 hard-shadow-lg mb-6">
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase text-on-secondary-container">
+                        THE LAB
+                    </h1>
+</div>
+<p class="font-body text-xl max-w-2xl text-on-surface-variant font-medium leading-relaxed">
+                    Experimental grounds and technical deep-dives. A collection of architectural patterns, machine learning prototypes, and interface studies.
+                </p>
+</header>
+<!-- Filter Bar -->
+<div class="mb-16 flex flex-wrap items-center gap-3 bg-surface-container-low border-2 border-black p-4 hard-shadow">
+<span class="font-label font-black text-sm uppercase px-2">FILTER_BY:</span>
+<button class="px-4 py-2 border-2 border-black bg-primary-container font-label font-bold text-xs uppercase hover:bg-primary transition-colors">ALL_WORK</button>
+<button class="px-4 py-2 border border-black bg-surface hover:bg-tertiary-container font-label font-bold text-xs uppercase transition-colors">PYTHON</button>
+<button class="px-4 py-2 border border-black bg-surface hover:bg-tertiary-container font-label font-bold text-xs uppercase transition-colors">ML_AI</button>
+<button class="px-4 py-2 border border-black bg-surface hover:bg-tertiary-container font-label font-bold text-xs uppercase transition-colors">REACT</button>
+<button class="px-4 py-2 border border-black bg-surface hover:bg-tertiary-container font-label font-bold text-xs uppercase transition-colors">TYPESCRIPT</button>
+<button class="px-4 py-2 border border-black bg-surface hover:bg-tertiary-container font-label font-bold text-xs uppercase transition-colors">ARCHITECTURE</button>
+</div>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+<!-- Project Card 1 -->
+<article class="bg-surface-container-lowest border-4 border-black hard-shadow-lg flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+<div class="relative h-64 border-b-4 border-black overflow-hidden bg-tertiary-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract geometric data visualization project cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPMfMyb3rjMDpa8TIUpCIRE3kk0O7hPAza3gLfHJwxqk0FzgAJSlZldGwStKqjwm4kNy3oBhCXh52Ucmx2rNZKVorbpi1Xerj99V5aLBIbI0DpMn2aPbrz--vdBsx58MFLmaoxMbaiRS5J3cb9MWTOw6HKIrBpy4ABUPADIz_8MgH5CPICVFiAApZEIDmMOtEDk1ta9RWg6b0fuwxZ8LYwrBu5zrFelJ1iSDbP8HryC9dxJGItCHw1wkMBrJEi92o5I7tSox-GbZg"/>
+<div class="absolute top-4 right-4 bg-white border-2 border-black px-2 py-1">
+<span class="font-label font-black text-[10px] uppercase">EXP_001</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-secondary-container">PYTHON</span>
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-surface-container">PYTORCH</span>
+</div>
+<h3 class="font-headline text-2xl font-black mb-4 uppercase tracking-tighter">NEURAL_DRAFT_V2</h3>
+<p class="font-body text-sm text-on-surface-variant mb-10 flex-1 leading-relaxed">
+                            A generative architectural engine using GANs to produce structural schematic drawings based on environmental data inputs.
+                        </p>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-surface active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">code</span> SOURCE
+                            </button>
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-tertiary-container active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">visibility</span> DEMO
+                            </button>
+</div>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="bg-surface-container-lowest border-4 border-black hard-shadow-lg flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+<div class="relative h-64 border-b-4 border-black overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Technical blueprint and circuit board design overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOzXl7Vqf_mtd3oXC_DSxJcZL5nmJU18dSWyLACQGY6P-WA1Mftm01kcbymId7szZkI36lML3zvflPqYLycrGvtm655pU3_HGSDFiskiJhfd4udQPLpiSLVcwDMx31jIDwX_rxIXs1MrzMz8NJoAmzX2o0PZ0NxSG4PCZJX6_owLyqtkoi6xUUFUkM_IU-ghbbM0iHDIcAXjR8BfrWj_yzzFbKVCo5EwiZQARiVpC4-NWzeqeQxHKzbq3wM-u7QKlgi_6T6DTO2Ic"/>
+<div class="absolute top-4 right-4 bg-white border-2 border-black px-2 py-1">
+<span class="font-label font-black text-[10px] uppercase">EXP_042</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-tertiary-container">REACT</span>
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-surface-container">THREE.JS</span>
+</div>
+<h3 class="font-headline text-2xl font-black mb-4 uppercase tracking-tighter">VOXEL_RENDERER</h3>
+<p class="font-body text-sm text-on-surface-variant mb-10 flex-1 leading-relaxed">
+                            Web-based voxel engine optimized for architectural visualization. Supports real-time lighting and collaborative modeling.
+                        </p>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-surface active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">code</span> SOURCE
+                            </button>
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-primary-container active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">visibility</span> DEMO
+                            </button>
+</div>
+</div>
+</article>
+<!-- Project Card 3 -->
+<article class="bg-surface-container-lowest border-4 border-black hard-shadow-lg flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+<div class="relative h-64 border-b-4 border-black overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Monochrome code on a dark screen terminal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARCcVyWAajCIzr2tMG1ugZLH0yarpuHvIrFAyxPBldE2dXUYvqd0YRW6a8X63V-StvJDvOHoE94IwDaohQb4kMRcXLp9CxGPHxa4821XsMdgfWJztaiYzPg7di2XpxoqIOruEeCOShxSFQ0VQBEYICq6fsAtgSDZr4Z3J39OTJ8Nggv2P7hVfbS3iJE_D9TYRPxDFU0dNkF9OJzJ4tHeJ4kZ0Aliqn2atGsigeSl8589PfX1EfC2RcyjO9YCWl4SF2B5TPPG33AhQ"/>
+<div class="absolute top-4 right-4 bg-white border-2 border-black px-2 py-1">
+<span class="font-label font-black text-[10px] uppercase">LIB_089</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-surface-container">TYPESCRIPT</span>
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-secondary-container">NODE.JS</span>
+</div>
+<h3 class="font-headline text-2xl font-black mb-4 uppercase tracking-tighter">BRUTAL_UI_CORE</h3>
+<p class="font-body text-sm text-on-surface-variant mb-10 flex-1 leading-relaxed">
+                            An open-source design system library implementing neo-brutalist principles with a focus on accessibility and high-contrast visuals.
+                        </p>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-surface active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">code</span> SOURCE
+                            </button>
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-tertiary-container active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">visibility</span> DEMO
+                            </button>
+</div>
+</div>
+</article>
+<!-- Project Card 4 -->
+<article class="bg-surface-container-lowest border-4 border-black hard-shadow-lg flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+<div class="relative h-64 border-b-4 border-black overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Complex 3D mathematical mesh visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5gbByMqwXvOzNe3kimKrRVOlL_Li_EHJdivIDtUplUn17W8lLYIxZI4IqYDHRUNefOmg7G5IT70TRz2SOpf2hVBHa5VueLYQXHABhFqIBhGRg4M96B1D6shox5dhQ4uBsVfZUXhYh5WDxjfRQjA1B4k9V7adFuAzCUvQEiDL7WBdp8cjQJz0a17o_eABjrQG1YIDWKIyjKQ-Ce7C5ZyeJUtBhgDWYsbkTN6cyd_cGDak2pmuqRiylisaogUSvyXG3Wz1Rd9w-020"/>
+<div class="absolute top-4 right-4 bg-white border-2 border-black px-2 py-1">
+<span class="font-label font-black text-[10px] uppercase">EXP_102</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-primary-container">PYTHON</span>
+<span class="font-label text-[10px] font-bold uppercase border border-black px-2 py-0.5 bg-tertiary-container">DOCKER</span>
+</div>
+<h3 class="font-headline text-2xl font-black mb-4 uppercase tracking-tighter">DATA_STRATA</h3>
+<p class="font-body text-sm text-on-surface-variant mb-10 flex-1 leading-relaxed">
+                            Infrastructure-as-Code playground for managing multi-cloud data pipelines with automated cost-optimization triggers.
+                        </p>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-surface active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">code</span> SOURCE
+                            </button>
+<button class="flex items-center justify-center gap-2 border-2 border-black py-3 font-headline font-bold text-sm uppercase bg-secondary-container active-press hard-shadow">
+<span class="material-symbols-outlined text-sm">visibility</span> DEMO
+                            </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Footer Section -->
+<footer class="mt-32 pt-20 border-t-4 border-black">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+<div>
+<h2 class="font-headline font-black text-4xl uppercase mb-6">CURIOUS?</h2>
+<p class="font-body text-lg text-on-surface-variant mb-8 max-w-md">
+                            All experiments are documented and available for collaboration. If you see something that sparks an idea, let's build.
+                        </p>
+<div class="flex gap-4">
+<a class="material-symbols-outlined p-4 border-2 border-black hard-shadow bg-surface hover:bg-secondary-container transition-all" href="#">share</a>
+<a class="material-symbols-outlined p-4 border-2 border-black hard-shadow bg-surface hover:bg-tertiary-container transition-all" href="#">alternate_email</a>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label font-black text-sm uppercase text-outline mb-2">LAST_UPDATE_OS</p>
+<p class="font-headline font-black text-2xl uppercase">SYSTEM_STABLE // 2024.05.21</p>
+</div>
+</div>
+</footer>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#f6f6f6] border-t-4 border-black px-6 h-20 flex justify-between items-center shadow-[0px_-4px_0px_0px_rgba(12,15,15,1)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6d5a00]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">science</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">terminal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+</body></html>
