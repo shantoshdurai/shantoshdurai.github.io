@@ -239,13 +239,14 @@ function App() {
                     },
                     {
                         id: 'university-chatbot',
-                        title: 'Uni-Chatbot (RAG)',
+                        title: 'Academix (RAG Portal)',
                         image: '/project_chatbot.png',
                         badge: 'AI_04',
-                        tags: ['PYTHON', 'LANGCHAIN', 'OLLAMA'],
-                        description: 'RAG-based university chatbot built with LangChain and Ollama (llama3.1:8b).',
+                        tags: ['PYTHON', 'REACT', 'GROQ', 'RAG'],
+                        description: 'Production-ready university portal with DSU Trichy exam logic, PDF vector search, and a persistent resource library.',
                         sourceLink: 'https://github.com/shantoshdurai/university-chatbot-langchain',
-                        categories: ['PYTHON', 'AI_ML']
+                        demoLink: 'https://university-chatbot-langchain.vercel.app',
+                        categories: ['PYTHON', 'AI_ML', 'WEB']
                     },
                     {
                         id: 'flower-classifier',
