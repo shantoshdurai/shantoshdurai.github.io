@@ -260,6 +260,17 @@ function App() {
                         categories: ['PYTHON', 'AI_ML']
                     },
                     {
+                        id: 'ghosttalker',
+                        title: 'GhostTalker Voice App',
+                        image: '/ghosttalker.png',
+                        badge: 'AI_06',
+                        tags: ['PYTHON', 'GRADIO', 'F5-TTS', 'AI'],
+                        description: 'A clean, user-friendly voice cloning app using F5-TTS with a Gradio web interface, designed for quick and seamless voice generation.',
+                        sourceLink: 'https://github.com/shantoshdurai/Ghosttalker',
+                        demoLink: 'https://huggingface.co/spaces/Santoshp123/GhostTalker',
+                        categories: ['PYTHON', 'AI_ML', 'WEB']
+                    },
+                    {
                         id: 'classnow',
                         title: 'ClassNow-app',
                         image: '/classnow.png',
