@@ -1,14 +1,321 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/santosh-CWRctmrq.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Santosh - Full Stack Developer & AI Specialist</title>
-    <script type="module" crossorigin src="/assets/index-BQYTtKrp.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DDP1cpB0.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santosh Durai - Projects & Works</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .intro h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #b0b0b0;
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: #00d4ff;
+            color: #0f0f1e;
+            border-color: #00d4ff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .projects-section {
+            margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #00d4ff;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.4em;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .project-desc {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #00ffff;
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            text-align: center;
+            color: #666;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00ffff;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .intro h1 {
+                font-size: 2em;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <container>
+        <!-- Header with Profile -->
+        <div class="header">
+            <div class="profile-image">
+                <img src="/assets/santosh-CWRctmrq.png" alt="Santosh Durai">
+            </div>
+            <div class="intro">
+                <h1>Santosh Durai</h1>
+                <p>CS Student • AI Architect • Full-Stack Developer</p>
+                <p>Building innovative solutions with React, Python, FastAPI, and cutting-edge AI technologies.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/shantoshdurai" class="btn btn-primary">GitHub</a>
+                    <a href="https://linkedin.com/in/shantoshdurai" class="btn btn-secondary">LinkedIn</a>
+                    <a href="https://youtube.com/@santastuffs" class="btn btn-secondary">YouTube</a>
+                    <a href="mailto:Shantoshdurai06@gmail.com" class="btn btn-secondary">Email</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <h2 class="section-title">📚 Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3 class="project-title">Academix Portal</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">LangChain</span>
+                    </div>
+                    <p class="project-desc">Production-grade AI university portal with RAG, Vision OCR, and specialized academic modes. Powered by Groq's Llama-3.3-70b.</p>
+                    <a href="https://github.com/shantoshdurai/university-chatbot-langchain" class="project-link">→ View Project</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3 class="project-title">ClassNow</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Gemini AI</span>
+                    </div>
+                    <p class="project-desc">University class management application with AI-powered features. Built with Flutter for cross-platform compatibility.</p>
+                    <a href="https://github.com/shantoshdurai/ClassNow-app" class="project-link">→ View Project</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3 class="project-title">3D Archive</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Blender</span>
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">Unreal</span>
+                    </div>
+                    <p class="project-desc">High-fidelity 3D renders and architectural assets. Professional 3D modeling and visualization work.</p>
+                    <a href="https://github.com/shantoshdurai/3D-Blender-Archive" class="project-link">→ View Project</a>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Vite</span>
+                        <span class="tech-tag">CSS3</span>
+                    </div>
+                    <p class="project-desc">Modern, responsive portfolio website showcasing work, projects, and experience in full-stack development and AI.</p>
+                    <a href="https://github.com/shantoshdurai/portfolio" class="project-link">→ View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://github.com/shantoshdurai">GitHub</a>
+                <a href="https://linkedin.com/in/shantoshdurai">LinkedIn</a>
+                <a href="https://youtube.com/@santastuffs">YouTube</a>
+                <a href="mailto:Shantoshdurai06@gmail.com">Email</a>
+            </div>
+            <p>© 2026 Santosh Durai. All rights reserved.</p>
+        </div>
+    </container>
+</body>
 </html>
