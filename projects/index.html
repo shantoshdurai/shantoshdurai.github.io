@@ -9,6 +9,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script type="module" crossorigin src="/projects/assets/index-BGnx6t_r.js"></script>
     <link rel="stylesheet" crossorigin href="/projects/assets/index-C24nJ9W_.css">
+    <script>
+      // 1. Initial theme load (run immediately to prevent flash)
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+
+      // 2. Inject Theme Toggle button next to Terminal button once mounted
+      window.addEventListener('DOMContentLoaded', () => {
+        const interval = setInterval(() => {
+          const buttons = document.querySelectorAll('button.material-symbols-outlined');
+          const terminalBtn = Array.from(buttons).find(b => b.textContent.trim() === 'terminal');
+          
+          if (terminalBtn) {
+            clearInterval(interval);
+            if (document.getElementById('theme-toggle-btn')) return;
+
+            const parent = terminalBtn.parentElement;
+            const toggleBtn = document.createElement('button');
+            toggleBtn.id = 'theme-toggle-btn';
+            toggleBtn.className = 'material-symbols-outlined p-2 border-2 border-black hard-shadow bg-surface hover:bg-primary-container active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-300 cursor-pointer';
+            toggleBtn.style.fontFamily = "'Material Symbols Outlined'";
+            
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            toggleBtn.textContent = currentTheme === 'dark' ? 'light_mode' : 'dark_mode';
+
+            toggleBtn.onclick = function() {
+              const theme = document.documentElement.getAttribute('data-theme') || 'light';
+              const next = theme === 'dark' ? 'light' : 'dark';
+              
+              document.documentElement.setAttribute('data-theme', next);
+              if (next === 'dark') {
+                document.documentElement.classList.add('dark');
+                toggleBtn.textContent = 'light_mode';
+              } else {
+                document.documentElement.classList.remove('dark');
+                toggleBtn.textContent = 'dark_mode';
+              }
+              localStorage.setItem('theme', next);
+            };
+
+            parent.appendChild(toggleBtn);
+          }
+        }, 50);
+      });
+    </script>
   </head>
   <body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
     <div id="root"></div>
